@@ -1,0 +1,59 @@
+DNS
+Command used: dig google.com
+Reason:- This command was used to ask the IP address for google to check if it working as expected. 
+```text 
+google.com.             39      IN      A       142.250.129.100
+google.com.             39      IN      A       142.250.129.139
+google.com.             39      IN      A       142.250.129.113
+google.com.             39      IN      A       142.250.129.102
+google.com.             39      IN      A       142.250.129.138
+google.com.             39      IN      A       142.250.129.101
+
+NETWORK
+Command used: ping -c 4 google.com
+Reason:- The command was used to reach the network of google.com.
+```text 
+PING google.com (142.251.29.138) 56(84) bytes of data.
+64 bytes from uv-in-f138.1e100.net (142.251.29.138): icmp_seq=1 ttl=111 time=15.8 ms
+64 bytes from uv-in-f138.1e100.net (142.251.29.138): icmp_seq=2 ttl=111 time=13.2 ms
+64 bytes from uv-in-f138.1e100.net (142.251.29.138): icmp_seq=3 ttl=111 time=11.5 ms
+64 bytes from uv-in-f138.1e100.net (142.251.29.138): icmp_seq=4 ttl=111 time=12.3 ms
+
+WEBSERVER 
+Command used: curl I google.com
+Reason:- The command was used to interact with the google webserver. 
+```text 
+HTTP/1.1 301 Moved Permanently
+Location: http://www.google.com/
+Content-Type: text/html; charset=UTF-8
+
+LOGS/SERVICES
+Command used:  systemctl status https://www.google.com/
+Reason:- The command was used to check the status of the systems running at the back if they are working as expected.
+```text 
+Unit https:--www.google.com-.service could not be found.
+
+HOPS
+Command used: traceroute google.com
+Reason: This command was used to trace the route of the server. 
+```text 
+traceroute to google.com (142.251.29.102), 30 hops max, 60 byte packets
+ 1  Najma.mshome.net (172.30.208.1)  1.547 ms  0.569 ms  0.469 ms
+ 2  192.168.0.1 (192.168.0.1)  3.168 ms  3.903 ms  3.067 ms
+ 3  * * *
+ 4  80.255.195.134 (80.255.195.134)  18.828 ms  18.754 ms  18.736 ms
+ 5  * * *
+ 6  * * *
+ 7  host-213-104-85.174.not-set-yet.virginmedia.net (213.104.85.174)  20.664 ms  16.269 ms  21.801 ms
+ 8  * * *
+ 9  142.251.54.46 (142.251.54.46)  23.290 ms 142.251.54.32 (142.251.54.32)  19.247 ms 216.239.41.240 (216.239.41.240)  13.618 ms
+10  192.178.97.170 (192.178.97.170)  28.045 ms  26.265 ms 192.178.98.6 (192.178.98.6)  20.789 ms
+11  192.178.245.19 (192.178.245.19)  21.510 ms 172.253.51.109 (172.253.51.109)  18.181 ms 192.178.244.205 (192.178.244.205)  21.962 ms
+12  142.251.192.156 (142.251.192.156)  18.131 ms 172.253.65.168 (172.253.65.168)  24.752 ms 142.251.194.164 (142.251.194.164)  17.448 ms
+13  * * *
+14  * * *
+15  * * *
+16  * * *
+17  * * *
+18  * * *
+19  uv-in-f102.1e100.net (142.251.29.102)  16.145 ms  18.054 ms  15.354 ms
